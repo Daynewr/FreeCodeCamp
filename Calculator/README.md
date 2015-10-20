@@ -1,2 +1,2 @@
-Basic JS Calculator using modern design.
-<a href="https://daynewr.github.io/FreeCodeCamp/Calculator" target="_blank"> Calculator </a>
+Basic JS Calculator using modern design.<br />
+Preview it here: <a href="https://daynewr.github.io/FreeCodeCamp/Calculator" target="_blank"> Calculator </a>
