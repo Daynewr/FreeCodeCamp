@@ -61,6 +61,8 @@ body{
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
     text-align: right;
+    font-family: 'Audiowide', cursive !important;
+    margin-bottom: 5%;
 }
 
 .center{
