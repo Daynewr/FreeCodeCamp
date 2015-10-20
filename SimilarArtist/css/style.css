@@ -1,0 +1,38 @@
+
+
+.card-wide.mdl-card {
+  width: 400px;
+  margin: 20px 10px 0 10px;
+  display: inline-block;
+}
+.card-wide > .mdl-card__title {
+  color: grey;
+  height: 350px;
+  background-color: #000;
+  opacity: 0.7;
+}
+
+.card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.page-content {
+  text-align: center;
+}
+
+.divider {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+h4.title {
+  font-size: 1em !important;
+}
+
+h2.artist {
+  font-size: 1.5em !important;
+}
+
+h1.divider {
+  font-size: 1.5em !important;
+}

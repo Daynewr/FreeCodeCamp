@@ -1,0 +1,73 @@
+body{
+  background: gray;
+  font-family:'Audiowide', cursive;
+}
+
+.mdl-card {
+  border-radius: 10%;
+  border: 2px solid #FFAB40;
+  top: 75px;
+  left: 10%;
+  max-width: 100%;
+  width: 300px;
+}
+
+.mdl-card__title{
+  background: black;
+  height: 60px;
+  color: #FFF;
+  font-size: 2em;
+}
+
+.mdl-button {
+  margin: 1%;
+}
+
+.row1 {
+  margin-top: 10px;
+}
+
+.row4{
+  margin-bottom: 10px;
+}
+
+.mdl-button--colored:hover,.mdl-button--colored2 {
+  background: #393435 !important;
+  color: #FFAB40;
+}
+
+.mdl-button--colored2:hover {
+  background: #FFAB40 !important;
+  color: #393435;
+}
+
+.mdl-switch.is-checked .mdl-switch__thumb {
+  background: #FAFAFA;
+}
+.mdl-switch__thumb {
+    background: #FFAB40;
+}
+
+.switch {
+ margin-left: 250px;
+}
+
+.flipped h2 {
+    width: 100%;
+    height: 100%;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    text-align: right;
+}
+
+.center{
+  display: inline-block;
+}
+
+.holder {
+  width: 95%;
+  text-align: center;
+}
