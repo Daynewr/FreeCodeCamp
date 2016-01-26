@@ -1,0 +1,70 @@
+<!doctype html>
+
+<HTML>
+
+  <head>
+    <!--JS files-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.0.5/material.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="js/api.js"></script>-->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/appangular.js"></script>
+    <!--CSS files-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/material.min.css">
+    <!--Font files-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-app="newsApp" ng-controller="NewsController">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <h3 class="center">Free Code Camp | Camper News Feed</h3>
+      </header>
+      <!--Begin content-->
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" ng-repeat="article in articles | limitTo:count">
+            <header class="mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone back-color mdl-color-text--white" style="background: url('{{article.image}}'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+              <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone circle-position">
+                <div class="section__circle-container__circle mdl-color--primary" style="background: url('{{article.author.picture}}'); background-repeat: no-repeat; background-size: cover;">
+                </div>
+              </div>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone" >
+              <div class = "mdl-card__supporting-text">
+                <a href = "{{article.link}}" target="_blank">
+                  <h4>{{article.headline}}</h4></a> Submitted by:
+                  <a class="mdl-button" target="_blank" href="http://www.freecodecamp.com/{{article.author.username}}">{{article.author.username}}</a>
+              </div>
+              <div class="mdl-card__actions">
+                <a href = "{{article.link}}" target="_blank" class="mdl-button">Read Article </a>
+              </div>
+            </div>
+              <p class="up-votes">Up Votes: {{article.upVotes.length}}</p>
+          </section>
+          <div class="load-more-button">
+            <a href="#" class="mdl-button" id="load-more" ng-click="loadMore()">(load more)</a>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mdl-mega-footer">
+          <div class="mdl-mega-footer--bottom-section">
+            <div class="mdl-logo">
+              The Fine Print:
+            </div>
+            <ul class="mdl-mega-footer--link-list">
+              <li>Made for <a href="https://freecodecamp.com">FreeCodeCamp</a></li>
+              <li>|</li>
+              <li>Based on <a href="http://www.getmdl.io">MDL Framework</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+
+</HTML>
