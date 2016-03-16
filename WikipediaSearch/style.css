@@ -1,0 +1,117 @@
+
+html, h1, p, h2 {
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+body {
+  background: url("https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png") center no-repeat;
+  background-color:#ccc;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 900;
+}
+
+div h1 {
+  font-size: 3em;
+  margin:auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+form {
+  margin: auto;
+  text-align: center;
+}
+
+.box {
+  background-color: white;
+  border: #282c34 solid 2px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 50%;
+  margin-left: 25%;
+  min-width: 300px;
+}
+
+.box-result {
+  background-color: white;
+  border: #282c34 solid 2px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 100%;
+  min-width: 300px;
+}
+
+.box-result p, h2 {
+  margin-left: 15px;
+  display: inline-block;
+}
+
+a {
+  margin-left: 10px;
+  font-size: 1.25em;
+
+}
+
+img {
+  width: 10%;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.img-container {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+#loading {
+  margin-top: 5%;
+}
+
+/*==================================================
+ * Effect 8
+ * ===============================================*/
+.effect8
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect8:before, .effect8:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.effect8:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+.mdl-textfield__label:after {
+  background-color: #ccc !important;
+}

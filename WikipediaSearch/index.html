@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wikipedia Search</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" charset="utf-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.1/angular-sanitize.min.js"></script>
+
+
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+
+  </head>
+  <body ng-app="wikiSearch">
+     <div class="container" ng-controller="WikiSearchController">
+        <div class="box effect8">
+         <h1>Search Wikipedia</h1>
+         <!-- Expandable Textfield -->
+        <form ng-submit="go()">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="wikisearch">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="wikisearch" ng-model="search">
+              <label class="mdl-textfield__label" for="sample-expandable"></label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="box effect8" id="loading" ng-if="!wikis">
+        <h1>No Results Found</h1>
+      </div>
+      <div class="box-result effect8" ng-repeat="wiki in wikis.query.search">
+            <img ng-src={{wiki.image}}></img>
+          <h2>{{wiki.title}}</h2><a target="_blank" href="https://en.wikipedia.org/wiki/{{wiki.title}}">(wikipedia)</a>
+          <p ng-bind-html="wiki.snippet+'(...)'"></p>
+      </div>
+    </div>
+  </body>
+</html>
