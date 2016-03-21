@@ -17,6 +17,3 @@ angular
   'WikiSearchController',
   'ngSanitize'
   ])
-
-
-  /*test*/
