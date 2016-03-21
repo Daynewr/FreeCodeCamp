@@ -1,5 +1,5 @@
-# Camper-News
-Uses freecodecamp.com API to pull in submitted stories
+# YouTube API
+Uses youtube.com API to pull in videos by topic
 
-You can view the project here: <a href="https://daynewr.github.io/FreeCodeCamp/Camper-News" target="_blank">FCC Camper New</a>
+You can view the project here: <a href="https://daynewr.github.io/FreeCodeCamp/YouTubeAPI" target="_blank">YouTube API</a>
 
