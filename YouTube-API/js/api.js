@@ -1,11 +1,15 @@
 $(document).ready(function() {
-  var URL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=rating&q=javascript&relevanceLanguage=en&key=AIzaSyA5KQV9Ppd8UAZecaH6PybHKSzVbCL8_Nk';
+  var URL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=date&q=javascript&relevanceLanguage=en&key=AIzaSyA5KQV9Ppd8UAZecaH6PybHKSzVbCL8_Nk';
 
   //get the API information and pass to HTML node builder then add to DOM
   $.get(URL, function(root) {
     var domHolder = '';
+    var dateHolder = '';
     for (var i = 0; i < 10; i++) {
-      domHolder += buildDomElement(root.items[i]);
+      dateHolder = new Date(root.items[i].snippet.publishedAt);
+      dateHolder = dateHolder.toDateString();
+      console.log(dateHolder);
+      domHolder += buildDomElement(root.items[i], dateHolder);
     }
     domHolder +=
       '<div class="load-more-button"><a href="#" class="mdl-button" id="load-more">(load more)</a></div>';
@@ -13,7 +17,7 @@ $(document).ready(function() {
   }); //first get
 
   //function to build HTML node
-  function buildDomElement(data) {
+  function buildDomElement(data, dateHolder) {
     domElement =
       '<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">';
     domElement +=
@@ -24,8 +28,7 @@ $(document).ready(function() {
       '<div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone circle-position">';
     domElement +=
       '<div class="section__circle-container__circle mdl-color--primary" style="background: url(\'' +
-      data.snippet.thumbnails.medium.url +
-      '\'); background-repeat: no-repeat; background-size: cover;" >';
+      data.snippet.thumbnails.medium.url + '\'); background-repeat: no-repeat; background-size: cover;" >';
     domElement += '</div> </div> </header>';
     domElement +=
       '<div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone" > <div class = "mdl-card__supporting-text">';
@@ -39,7 +42,7 @@ $(document).ready(function() {
       data.id.videoId +
       '" target="_blank" class="mdl-button">Watch Video </a> </div >';
     domElement +=
-      '</div><p class="up-votes">Published: '+ data.snippet.publishedAt+'</p></section>';
+      '</div><p class="up-votes">Published: '+ dateHolder +'</p></section>';
 
     return domElement;
   }
