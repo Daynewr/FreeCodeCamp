@@ -1,0 +1,64 @@
+'use strict';
+
+//** All the game logic will be in this file.  The AI belongs in ai.js **//
+
+
+//create game board
+var TicTacToe = function(board){
+   this.board = board;
+};
+
+//winning moves
+
+TicTacToe.winner = [
+      [0,1,2],
+      [3,4,5],
+      [6,7,8],
+      [0,3,6],
+      [1,4,7],
+      [2,5,8],
+      [2,4,6],
+      [0,4,8]
+    ];
+
+
+//check if current move is valid [works]
+TicTacToe.prototype.isValidMove = function(move, player){
+  var moveValue;
+      if(this.board[move] === ' '){
+              return true;
+      } else {
+        moveValue = false;
+      }
+    return moveValue;
+};
+
+//Adds new move to board array [works]
+TicTacToe.prototype.addMove = function(move, player){
+  if(this.isValidMove(move, player)){
+      //update board with new move.
+      this.board[move] = player;
+  } else {
+    //not a valid move.
+  }
+};
+
+//determines if moves are remaining and amount [works]
+TicTacToe.prototype.movesRemaining = function () {
+  var movesLeft = false;
+    this.board.forEach(function(spot){
+        if(spot === ' '){
+           movesLeft += 1;
+        }
+    });
+    return movesLeft;
+}
+
+//check if there is a winner to the game
+TicTacToe.prototype.isGameOver = function(board){
+
+}
+
+
+//Start the game
+new TicTacToe([' ',' ',' ',' ',' ',' ',' ',' ',' ']);
