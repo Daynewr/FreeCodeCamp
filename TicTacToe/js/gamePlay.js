@@ -5,22 +5,25 @@
 
 //start the game
 var newGame;
-var playerTurn = true;
+var playerTurn;
 var GameOver = false;
 
-var startGame = function(){
+function startGame(){
   newGame = new TicTacToe([' ',' ',' ',' ',' ',' ',' ',' ',' ']);
 };
 
 
-//make game move & check winner
+//make game move & check winner [works]
 TicTacToe.prototype.makeMove = function(move, player){
   if(playerTurn && this.movesRemaining() > 0){
-    this.addMove(move,player);
+    this.addMove(move, player);
     if(this.gameWinner()){
         gameOver = true;
     }
-    playerTurn = false;
   }
+};
 
+//Minmax helper
+TicTacToe.prototype.minmaxMove(game, index){
+    //make new copy of board
 };

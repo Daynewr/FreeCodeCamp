@@ -59,9 +59,11 @@ TicTacToe.prototype.gameWinner = function(){
 
   this.winningGame.forEach(function(moves){
       player = newGame.board[moves[0]];
-      if( player != ' ' && player === newGame.board[moves[1]] && player === newGame.board[moves[2]]){
-		winner = player;
-	  }
+      var board = newGame.board;
+
+      if( player != ' ' && player === board[moves[1]] && player === board[moves[2]]){
+		        winner = player;
+	    }
   });
   return winner;
 };
