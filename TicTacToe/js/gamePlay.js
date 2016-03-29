@@ -1,6 +1,6 @@
 'use strict';
 
-//* Impliments the rules of the game *//
+//* Impliments the rules of the game and interacts with DOM*//
 
 
 //attempt move

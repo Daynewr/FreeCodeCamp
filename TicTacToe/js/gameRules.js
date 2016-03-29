@@ -9,8 +9,7 @@ var TicTacToe = function(board){
 };
 
 //winning moves
-
-TicTacToe.winner = [
+TicTacToe.prototype.winningGame = [
       [0,1,2],
       [3,4,5],
       [6,7,8],
@@ -54,10 +53,19 @@ TicTacToe.prototype.movesRemaining = function () {
     return movesLeft;
 }
 
-//check if there is a winner to the game
-TicTacToe.prototype.isGameOver = function(board){
+//check if there is a winner and return it [works]
+TicTacToe.prototype.gameWinner = function(){
+  var player;
+  var winner;
 
-}
+  this.winningGame.forEach(function(moves){
+      player = newGame.board[moves[0]];
+      if( player != ' ' && player === newGame.board[moves[1]] && player === newGame.board[moves[2]]){
+		winner = player;
+	  }
+  });
+  return winner;
+};
 
 
 //Start the game
