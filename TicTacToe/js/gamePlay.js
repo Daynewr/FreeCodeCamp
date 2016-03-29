@@ -24,6 +24,6 @@ TicTacToe.prototype.makeMove = function(move, player){
 };
 
 //Minmax helper
-TicTacToe.prototype.minmaxMove = function(game, index){
-    //make new copy of board
+TicTacToe.prototype.minmaxMove = function(game, index) {
+    //make new copy of board here
 };
