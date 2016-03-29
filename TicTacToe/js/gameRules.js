@@ -35,10 +35,9 @@ TicTacToe.prototype.isValidMove = function(move, player){
 //Adds new move to board array [works]
 TicTacToe.prototype.addMove = function(move, player){
   if(this.isValidMove(move, player)){
-      //update board with new move.
       this.board[move] = player;
   } else {
-    //not a valid move.
+    //not a valid move
   }
 };
 
@@ -56,7 +55,7 @@ TicTacToe.prototype.movesRemaining = function () {
 //check if there is a winner and return it [works]
 TicTacToe.prototype.gameWinner = function(){
   var player;
-  var winner;
+  var winner = false;
 
   this.winningGame.forEach(function(moves){
       player = newGame.board[moves[0]];
@@ -66,7 +65,3 @@ TicTacToe.prototype.gameWinner = function(){
   });
   return winner;
 };
-
-
-//Start the game
-new TicTacToe([' ',' ',' ',' ',' ',' ',' ',' ',' ']);

@@ -3,13 +3,24 @@
 //* Impliments the rules of the game and interacts with DOM*//
 
 
-//attempt move
-var makeMove = function(){
-  
+//start the game
+var newGame;
+var playerTurn = true;
+var GameOver = false;
+
+var startGame = function(){
+  newGame = new TicTacToe([' ',' ',' ',' ',' ',' ',' ',' ',' ']);
 };
 
 
-//check winner
-var endGame = function(){
+//make game move & check winner
+TicTacToe.prototype.makeMove = function(move, player){
+  if(playerTurn && this.movesRemaining() > 0){
+    this.addMove(move,player);
+    if(this.gameWinner()){
+        gameOver = true;
+    }
+    playerTurn = false;
+  }
 
 };
