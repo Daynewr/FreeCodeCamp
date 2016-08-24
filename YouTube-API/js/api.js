@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var URL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=rating&q=javascript&relevanceLanguage=en&key=AIzaSyA5KQV9Ppd8UAZecaH6PybHKSzVbCL8_Nk';
+  var URL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=rating&q=javascript&relevanceLanguage=en&key=';
 
   //get the API information and pass to HTML node builder then add to DOM
   $.get(URL, function(root) {
